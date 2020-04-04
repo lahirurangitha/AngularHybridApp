@@ -1,15 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { UpgradeModule } from '@angular/upgrade/static';
+import { UpgradeModule, downgradeComponent } from '@angular/upgrade/static';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DowngradableComponent } from './downgradable/downgradable.component';
+
+declare var angular: any;
+
+angular
+  .module('angularJsApp')
+  .directive('ng2Dg', downgradeComponent({ component: DowngradableComponent }));
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, DowngradableComponent],
   imports: [BrowserModule, AppRoutingModule, UpgradeModule],
+  entryComponents: [
+    DowngradableComponent, // Don't forget this!!!
+  ],
   providers: [],
-  // bootstrap: [AppComponent]
+  // bootstrap: [AppComponent] // No Bootstrap-Component
 })
 export class AppModule {
   constructor(private upgrade: UpgradeModule) {}
