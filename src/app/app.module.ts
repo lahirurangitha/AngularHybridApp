@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { UpgradeModule, downgradeComponent } from '@angular/upgrade/static';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { DowngradableComponent } from './downgradable/downgradable.component';
 
 declare var angular: any;
@@ -13,7 +12,7 @@ angular
   .directive('ng2Dg', downgradeComponent({ component: DowngradableComponent }));
 
 @NgModule({
-  declarations: [AppComponent, DowngradableComponent],
+  declarations: [DowngradableComponent],
   imports: [BrowserModule, AppRoutingModule, UpgradeModule],
   entryComponents: [
     DowngradableComponent, // Don't forget this!!!
