@@ -1,29 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>AngularHybridApp</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularHybridApp</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-  <!-- ng1 scripts -->
- <link rel="stylesheet" href="ng1/app/jsdep/bootstrap/dist/css/bootstrap.css" />
- <link rel="stylesheet" href="ng1/app/app.css" />
+    <!-- ng1 scripts -->
+    <link
+      rel="stylesheet"
+      href="ng1/app/jsdep/bootstrap/dist/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="ng1/app/app.css" />
 
- <script src="ng1/app/jsdep/jquery/dist/jquery.js"></script>
- <script src="ng1/app/jsdep/angular/angular.js"></script>
- <script src="ng1/app/jsdep/angular-animate/angular-animate.js"></script>
- <script src="ng1/app/jsdep/angular-resource/angular-resource.js"></script>
- <script src="ng1/app/jsdep/angular-route/angular-route.js"></script>
- <script src="ng1/app/app.module.js"></script>
- <script src="ng1/app/app.config.js"></script>
- <script src="ng1/app/controllers/search.controller.js"></script>
- <script src="ng1/app/filters/search-for.filter.js"></script>
-  <!--  -->
+    <script src="ng1/app/jsdep/jquery/dist/jquery.js"></script>
+    <script src="ng1/app/jsdep/angular/angular.js"></script>
+    <script src="ng1/app/jsdep/angular-animate/angular-animate.js"></script>
+    <script src="ng1/app/jsdep/angular-resource/angular-resource.js"></script>
+    <script src="ng1/app/jsdep/angular-route/angular-route.js"></script>
+    <script src="ng1/app/app.module.js"></script>
+    <script src="ng1/app/app.config.js"></script>
+    <script src="ng1/app/controllers/search.controller.js"></script>
+    <script src="ng1/app/filters/search-for.filter.js"></script>
+    <!--  -->
+  </head>
+  <body>
+    <!-- ng1 -->
+    <div>
+      <div ng-view></div>
+    </div>
+    <!-- /ng1 -->
 
-</head>
-<body ng-app="angularJsApp">
-  <app-root></app-root>
-</body>
+    <router-outlet></router-outlet>
+
+  </body>
 </html>
+
