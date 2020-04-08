@@ -4,6 +4,7 @@ import { UpgradeModule, downgradeComponent } from '@angular/upgrade/static';
 
 import { AppRoutingModule } from './app-routing.module';
 import { DowngradableComponent } from './downgradable/downgradable.component';
+import { RootComponent } from './root/root.component';
 
 declare var angular: any;
 
@@ -12,17 +13,20 @@ angular
   .directive('ng2Dg', downgradeComponent({ component: DowngradableComponent }));
 
 @NgModule({
-  declarations: [DowngradableComponent],
+  declarations: [RootComponent, DowngradableComponent],
   imports: [BrowserModule, AppRoutingModule, UpgradeModule],
   entryComponents: [
-    DowngradableComponent, // Don't forget this!!!
+    DowngradableComponent,
   ],
   providers: [],
-  // bootstrap: [AppComponent] // No Bootstrap-Component
+  bootstrap: [RootComponent] // Bootstrap-Component
 })
 export class AppModule {
-  constructor(private upgrade: UpgradeModule) {}
-  ngDoBootstrap() {
-    this.upgrade.bootstrap(document.body, ['angularJsApp']);
-  }
+  // Remove code for bootstrapping hybrid app manually !
+  /*
+    constructor(private upgrade: UpgradeModule) { }
+    ngDoBootstrap() {
+      this.upgrade.bootstrap(document.body, ['angularJsApp']);
+    }
+  */
 }
