@@ -11,6 +11,10 @@ angular.
         }).
         when("/test", {
           template: '<h1>lahiru</h1>'
+        })
+        .when("/form", {
+          templateUrl: "ng1/app/html/simpleForm.html",
+          controller: "FormController"
         }).
         otherwise("/404");
     }

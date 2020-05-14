@@ -1,0 +1,8 @@
+<div ng-controller="FormController as formCtrl">
+  <h1>{{title}}</h1>
+  <h2>Selected date: {{ selectedDate | date : "fullDate" }}</h2>
+
+  <hr />
+  <ng2-dg [date]="selectedDate" (date-selected)="onValChange($event)"></ng2-dg>
+  <hr />
+</div>

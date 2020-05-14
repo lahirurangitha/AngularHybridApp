@@ -1,17 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-downgradable',
   templateUrl: './downgradable.component.html',
-  styleUrls: ['./downgradable.component.css']
+  styleUrls: ['./downgradable.component.css'],
 })
-export class DowngradableComponent implements OnInit {
-
+export class DowngradableComponent {
   title = 'Downgraded Component';
 
-  constructor() { }
+  @Input() date: Date;
 
-  ngOnInit(): void {
+  /*  when using them from AngularJS templates, you must use kebab-case
+      Ex: date-selected
+   */
+  @Output() dateSelected = new EventEmitter<Date>();
+
+  onDateChanges(d: Date) {
+    this.dateSelected.emit(d);
   }
-
 }
