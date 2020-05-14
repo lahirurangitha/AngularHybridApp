@@ -5,6 +5,7 @@ import { UpgradeModule, downgradeComponent } from '@angular/upgrade/static';
 
 import { AppRoutingModule } from './app-routing.module';
 import { DowngradableComponent } from './downgradable/downgradable.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './material.module';
 
@@ -23,13 +24,11 @@ angular
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    DemoMaterialModule // custom module which includes all material modules
+    DemoMaterialModule, // custom module which includes all material modules
   ],
-  entryComponents: [
-    DowngradableComponent, // Don't forget this!!!
-  ],
+  entryComponents: [DowngradableComponent],
   providers: [],
-  // bootstrap: [AppComponent] // No Bootstrap-Component
+  // bootstrap: [RootComponent], // Bootstrap-Component
 })
 export class AppModule {
   constructor(private upgrade: UpgradeModule) {}
